@@ -14,6 +14,24 @@ cv::Mat applySobelFilter(const cv::Mat& frame) {
     return grad;
 }
 
+cv::Mat applyCannyEdgeDetection(const cv::Mat& frame) {
+    cv::Mat gray, edges;
+    cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
+    cv::Canny(gray, edges, 50, 150);
+
+    return edges;
+}
+
+cv::Mat applyLaplacianEdgeDetection(const cv::Mat& frame) {
+    cv::Mat gray, laplacian;
+    cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
+    cv::Laplacian(gray, laplacian, CV_16S, 3);
+    cv::convertScaleAbs(laplacian, laplacian);
+
+    return laplacian;
+}
+
+
 int main() {
     cv::VideoCapture cap("nagranie.avi");
     if (!cap.isOpened()) {
@@ -24,6 +42,18 @@ int main() {
     int frame_height = static_cast<int>(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
     cv::VideoWriter video("output.avi", cv::VideoWriter::fourcc('M', 'J', 'P', 'G'),
         10, cv::Size(frame_width, frame_height), false);
+
+
+    while (true) {
+        cap >> frame;
+        if (frame.empty()) break;
+
+        cv::Mat sobelFrame = applySobelFilter(frame);
+        cv::Mat cannyFrame = applyCannyEdgeDetection(frame);
+        cv::Mat laplacianFrame = applyLaplacianEdgeDetection(frame);
+        video.write(laplacianFrame);
+    }
+
 
     cap.release();
     video.release();

@@ -31,6 +31,3 @@ Time elapsed while using GPU and CPU to conduct the operation
 Time elapsed while using GPU and CPU to conduct the operation
 
 ![Time elapsed](/media/sobel.png)
-
-Link to Google Collab with working code:
-https://colab.research.google.com/drive/1O3u79tnigwHUet6znQbKZKpdRWrhbgi2?usp=sharing

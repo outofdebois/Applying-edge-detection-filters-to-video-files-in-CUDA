@@ -12,7 +12,7 @@
 
 ![negative transformation applied](/media/negative.gif)
 
-Czas trwania wykonywania operacji przez GPU i CPU
+Czas trwania wykonywanej operacji przez GPU i CPU
 
 ![Time elapsed](/media/negative.png)
 
@@ -20,7 +20,7 @@ Czas trwania wykonywania operacji przez GPU i CPU
 
 ![gray-scale blur applied](/media/blur.gif)
 
-Czas trwania wykonywania operacji przez GPU i CPU
+Czas trwania wykonywanej operacji przez GPU i CPU
 
 ![Time elapsed](/media/blur.png)
 
@@ -28,6 +28,6 @@ Czas trwania wykonywania operacji przez GPU i CPU
 
 ![sobel filter applied](/media/sobel.gif)
 
-Czas trwania wykonywania operacji przez GPU i CPU
+Czas trwania wykonywanej operacji przez GPU i CPU
 
 ![Time elapsed](/media/sobel.png)
